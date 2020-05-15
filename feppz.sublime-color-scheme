@@ -3,11 +3,14 @@
     "variables": 
     {
         "primary_background": "#2A2C36",
-        "secondary_background": "#272830",
+        "secondary_background": "#272831",
         "foreground": "#8F8F96",
         "accent": "#2EB387",
+        "highlight": "color(var(primary_background) blend(#FFF 95%))",
+        "lowlight": "color(var(primary_background) blend(#000 75%))",
 
         "test": "#FF0000",
+        "transparent": "00000000",
 
         "eppz_source": "#DDDCD3",
         "eppz_enclosure": "#646870",
@@ -33,7 +36,12 @@
         "caret": "var(accent)",
         "accent": "var(accent)",
         "gutter": "var(secondary_background)",
-        "line_highlight": "var(secondary_background)",
+        "line_highlight": "var(primary_background)",
+        "selection": "var(highlight)",
+        "selection_border": "var(highlight)",
+        "selection_border_width": "0",
+        "inactive_selection": "var(lowlight)",
+        "line_diff_added": "var(accent)",
     },
     "rules":
     [
