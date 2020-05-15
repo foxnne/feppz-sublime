@@ -1,0 +1,185 @@
+{
+    "name": "feppz! Color Scheme",
+    "variables": 
+    {
+        "primary_background": "#2A2C36",
+        "secondary_background": "#272830",
+        "foreground": "#8F8F96",
+        "accent": "#2EB387",
+
+        "test": "#FF0000",
+
+        "eppz_source": "#DDDCD3",
+        "eppz_enclosure": "#646870",
+        "eppz_operator": "#B9B9B5",
+        "eppz_class": "#DECD83",
+        "eppz_comment": "#575B65",
+        "eppz_const": "#6074D2",
+        "eppz_null": "#58639A",
+        "eppz_num": "#609AD3",
+        "eppz_str": "#5FC0D2",
+        "eppz_char": "#5FD2BE",
+        "eppz_func": "#4CA586",
+        "eppz_var": "#D9C779",
+        "eppz_preproc": "#7D705E",
+        "eppz_keyword": "#CEA47E",
+        "eppz_decl": "#D88E79",
+        "eppz_type": "#B7766C"
+    },
+    "globals":
+    {
+        "background": "var(secondary_background)",
+        "foreground": "var(foreground)",
+        "caret": "var(accent)",
+        "accent": "var(accent)",
+        "gutter": "var(secondary_background)",
+        "line_highlight": "var(secondary_background)",
+    },
+    "rules":
+    [
+        {
+            "name": "entity.name",
+            "scope": "entity.name",
+            "foreground": "var(eppz_decl)"
+
+        },
+        {
+            "name": "entity.other.inherited-class",
+            "scope": "entity.other.inherited-class",
+            "foreground": "var(eppz_class)"
+        },
+        {
+            "name": "entity.name.section",
+            "scope": "entity.name.section",
+            "foreground": "var(test)"
+        },
+
+        {
+            "name": "entity.name.tag",
+            "scope": "entity.name.tag",
+            "foreground": "var(test)"
+        },
+
+        {
+            "name": "entity.other.attribute-name",
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(test)"
+        },
+        
+        {
+            "name": "entity.name.function",
+            "scope": "entity.name.function",
+            "foreground": "var(eppz_func)"
+        },
+
+        {
+            "name": "variable",
+            "scope": "variable",
+            "foreground": "var(test)"
+        },
+
+        {
+            "name": "variable.language",
+            "scope": "variable.language",
+            "foreground": "var(test)"
+        },
+
+        {
+            "name": "variable.parameter",
+            "scope": "variable.parameter",
+            "foreground": "var(eppz_var)"
+        },
+
+        {
+            "name": "variable.function",
+            "scope": "variable.function",
+            "foreground": "var(test)"
+        },
+
+        {
+            "name": "constant",
+            "scope": "constant",
+            "foreground": "var(eppz_const)"
+        },
+
+        {
+            "name": "constant.numeric",
+            "scope": "constant.numeric",
+            "foreground": "var(eppz_const)"
+        },
+
+        {
+            "name": "storage.type",
+            "scope": "storage.type",
+            "foreground": "var(eppz_type)"
+        },
+
+        {
+            "name": "strings",
+            "scope": "string",
+            "foreground": "var(eppz_str)" 
+        },
+
+        {
+            "name": "comment",
+            "scope": "comment",
+            "foreground": "var(eppz_comment)"
+        },
+
+        {
+            "name": "keyword.control",
+            "scope": "keyword.control",
+            "foreground": "var(eppz_keyword)"
+        },
+
+        {
+            "name": "keyword.operator",
+            "scope": "keyword.operator",
+            "foreground": "var(eppz_operator)"
+        },
+
+        {
+            "name": "constant.language",
+            "scope": "constant.language",
+            "foreground": "var(eppz_null)"
+        },
+
+        {
+            "name": "constant.numeric",
+            "scope": "constant.numeric",
+            "foreground": "var(eppz_const)"
+        },
+
+        {
+            "name": "odin.functions",
+            "scope": "keyword.function.odin",
+            "foreground": "var(eppz_func)"
+        },
+
+        //functions inside of other classes?
+        {
+            "name": "support.function",
+            "scope": "support.function",
+            "foreground": "var(eppz_func)"
+        },
+
+        {
+            "name": "support.constant",
+            "scope": "support.constant",
+            "foreground": "var(eppz_const)"
+        },
+
+        {
+            "name": "entity inherited class",
+            "scope": "entity.other.inherited-class",
+            "foreground": "var(eppz_class)"
+        }
+
+        
+
+      
+
+
+    ]
+    
+}
