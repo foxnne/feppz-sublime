@@ -10,24 +10,34 @@
         "lowlight": "color(var(primary_background) blend(#000 75%))",
 
         "test": "#FF0000",
+        "test2": "#00FF00",
+        "test3": "#0000FF",
         "transparent": "00000000",
 
         "eppz_source": "#DDDCD3",
         "eppz_enclosure": "#646870",
         "eppz_operator": "#B9B9B5",
         "eppz_class": "#DECD83",
+        //"eppz_class" : "#BC6F5C",
         "eppz_comment": "#575B65",
         "eppz_const": "#6074D2",
         "eppz_null": "#58639A",
         "eppz_num": "#609AD3",
         "eppz_str": "#5FC0D2",
         "eppz_char": "#5FD2BE",
-        "eppz_func": "#4CA586",
+        "eppz_func": "#61B891",
         "eppz_var": "#D9C779",
         "eppz_preproc": "#7D705E",
         "eppz_keyword": "#CEA47E",
         "eppz_decl": "#D88E79",
-        "eppz_type": "#B7766C"
+        "eppz_type": "#B7766C",
+        "eppz_modifier": "#615253",
+        "eppz_using": "#4C5177",
+        "eppz_inherited": "#967068",
+        "eppz_builtin": "#99726A",
+        "eppz_param": "#ABA06F"
+
+
     },
     "globals":
     {
@@ -54,24 +64,25 @@
         {
             "name": "entity.other.inherited-class",
             "scope": "entity.other.inherited-class",
-            "foreground": "var(eppz_class)"
+            "foreground": "var(test2)"
         },
         {
             "name": "entity.name.section",
             "scope": "entity.name.section",
-            "foreground": "var(test)"
+            "foreground": "var(test2)"
         },
 
+        // i.e. <param> <summary>
         {
             "name": "entity.name.tag",
             "scope": "entity.name.tag",
-            "foreground": "var(test)"
+            "foreground": "var(eppz_comment)"
         },
 
         {
             "name": "entity.other.attribute-name",
             "scope": "entity.other.attribute-name",
-            "foreground": "var(test)"
+            "foreground": "var(eppz_comment)"
         },
         
         {
@@ -83,25 +94,25 @@
         {
             "name": "variable",
             "scope": "variable",
-            "foreground": "var(test)"
+            "foreground": "var(eppz_var)"
         },
 
         {
             "name": "variable.language",
             "scope": "variable.language",
-            "foreground": "var(test)"
+            "foreground": "var(eppz_keyword)"
         },
 
         {
             "name": "variable.parameter",
             "scope": "variable.parameter",
-            "foreground": "var(eppz_var)"
+            "foreground": "var(eppz_param)"
         },
 
         {
             "name": "variable.function",
             "scope": "variable.function",
-            "foreground": "var(test)"
+            "foreground": "var(eppz_func)"
         },
 
         {
@@ -117,9 +128,27 @@
         },
 
         {
+            "name": "constant.language",
+            "scope": "constant.language",
+            "foreground": "var(eppz_null)"
+        },
+
+        {
+            "name": "constant.character.escape",
+            "scope": "constant.character.escape",
+            "foreground": "var(test3)"
+        },
+
+        {
             "name": "storage.type",
             "scope": "storage.type",
-            "foreground": "var(eppz_type)"
+            "foreground": "var(eppz_builtin)"
+        },
+
+        {
+            "name": "storage.modifier",
+            "scope": "storage.modifier",
+            "foreground": "var(eppz_modifier)"
         },
 
         {
@@ -134,11 +163,14 @@
             "foreground": "var(eppz_comment)"
         },
 
+    
         {
             "name": "keyword.control",
             "scope": "keyword.control",
-            "foreground": "var(eppz_keyword)"
+            "foreground": "var(eppz_using)"
         },
+
+        
 
         {
             "name": "keyword.operator",
@@ -147,23 +179,32 @@
         },
 
         {
-            "name": "constant.language",
-            "scope": "constant.language",
-            "foreground": "var(eppz_null)"
+            "name": "keyword.declaration",
+            "scope": "keyword.declaration",
+            "foreground": "var(test3)"
+        },
+
+        
+
+        {
+            "name": "meta.namespace",
+            "scope": "meta.namespace",
+            "foreground": "var(eppz_type)"
         },
 
         {
-            "name": "constant.numeric",
-            "scope": "constant.numeric",
-            "foreground": "var(eppz_const)"
+            "name": "punctuation",
+            "scope": "punctuation",
+            "foreground": "var(eppz_enclosure)"
         },
 
         {
-            "name": "odin.functions",
-            "scope": "keyword.function.odin",
-            "foreground": "var(eppz_func)"
+            "name": "meta.path",
+            "scope": "meta.path",
+            "foreground": "var(eppz_using)"
         },
 
+      
         //functions inside of other classes?
         {
             "name": "support.function",
@@ -180,13 +221,20 @@
         {
             "name": "entity inherited class",
             "scope": "entity.other.inherited-class",
-            "foreground": "var(eppz_class)"
-        }
+            "foreground": "var(eppz_inherited)"
+        },
 
-        
+        {
+            "name": "keyword.control.odin",
+            "scope": "keyword.control.odin",
+            "foreground": "var(eppz_keyword)"
+        },
 
-      
-
+        {
+            "name": "odin.functions",
+            "scope": "keyword.function.odin",
+            "foreground": "var(eppz_func)"
+        },
 
     ]
     
