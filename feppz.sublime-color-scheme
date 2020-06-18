@@ -9,6 +9,8 @@
         "highlight": "color(var(primary_background) blend(#FFF 95%))",
         "lowlight": "color(var(primary_background) blend(#000 75%))",
 
+        "exception": "#FF0000",
+
         "test": "#FF0000",
         "test2": "#00FF00",
         "test3": "#0000FF",
@@ -16,26 +18,30 @@
 
         "eppz_source": "#DDDCD3",
         "eppz_enclosure": "#646870",
-        "eppz_operator": "#B9B9B5",
+        "eppz_operator": "#B8B9B5",
         "eppz_class": "#DECD83",
-        //"eppz_class" : "#BC6F5C",
         "eppz_comment": "#575B65",
         "eppz_const": "#6074D2",
         "eppz_null": "#58639A",
         "eppz_num": "#609AD3",
         "eppz_str": "#5FC0D2",
         "eppz_char": "#5FD2BE",
-        "eppz_func": "#61B891",
+        "eppz_func": "#4DA686",
+        "eppz_support": "#4E8774",
         "eppz_var": "#D9C779",
         "eppz_preproc": "#7D705E",
-        "eppz_keyword": "#CEA47E",
+        "eppz_keyword": "#CEA37E",
         "eppz_decl": "#D88E79",
-        "eppz_type": "#B7766C",
+        "eppz_type": "#B6766B",
         "eppz_modifier": "#615253",
-        "eppz_using": "#4C5177",
+        "eppz_using": "#454D79",
         "eppz_inherited": "#967068",
         "eppz_builtin": "#99726A",
-        "eppz_param": "#ABA06F"
+        "eppz_param": "#ABA06F",
+        "eppz_local": "#7D765B",
+        "eppz_path": "#44529D",
+        "eppz_error": "#B9616E",
+        "eppz_suberr": "#95616F",
 
 
     },
@@ -55,17 +61,30 @@
     },
     "rules":
     [
+        // coloring of many things, sets a base color for defines
         {
             "name": "entity.name",
             "scope": "entity.name",
-            "foreground": "var(eppz_decl)"
+            "foreground": "var(eppz_decl)",
 
         },
+
+        // colors the labels of compile errors
+        {
+            "name": "entity.name.label",
+            "scope": "entity.name.label",
+            "foreground": "var(exception)"
+
+        },
+
+        // any inherited classes in c#
         {
             "name": "entity.other.inherited-class",
             "scope": "entity.other.inherited-class",
             "foreground": "var(test2)"
         },
+
+        // ?
         {
             "name": "entity.name.section",
             "scope": "entity.name.section",
@@ -79,36 +98,42 @@
             "foreground": "var(eppz_comment)"
         },
 
+
         {
             "name": "entity.other.attribute-name",
             "scope": "entity.other.attribute-name",
             "foreground": "var(eppz_comment)"
         },
         
+        // function names
         {
             "name": "entity.name.function",
             "scope": "entity.name.function",
             "foreground": "var(eppz_func)"
         },
 
+        // variables in c#
         {
             "name": "variable",
             "scope": "variable",
             "foreground": "var(eppz_var)"
         },
 
+        // ^
         {
             "name": "variable.language",
             "scope": "variable.language",
             "foreground": "var(eppz_keyword)"
         },
 
+        // function variables parameters 
         {
             "name": "variable.parameter",
             "scope": "variable.parameter",
             "foreground": "var(eppz_param)"
         },
 
+        // in c# functions embedded in classes/structs
         {
             "name": "variable.function",
             "scope": "variable.function",
@@ -136,7 +161,7 @@
         {
             "name": "constant.character.escape",
             "scope": "constant.character.escape",
-            "foreground": "var(test3)"
+            "foreground": "var(eppz_str)"
         },
 
         {
@@ -152,9 +177,21 @@
         },
 
         {
-            "name": "strings",
+            "name": "string",
             "scope": "string",
             "foreground": "var(eppz_str)" 
+        },
+
+        {
+            "name": "string",
+            "scope": "string.quoted.double",
+            "foreground": "var(eppz_str)" 
+        },
+
+        {
+            "name": "chars",
+            "scope": "string.quoted.single",
+            "foreground": "var(eppz_char)"
         },
 
         {
@@ -171,7 +208,6 @@
         },
 
         
-
         {
             "name": "keyword.operator",
             "scope": "keyword.operator",
@@ -183,8 +219,6 @@
             "scope": "keyword.declaration",
             "foreground": "var(test3)"
         },
-
-        
 
         {
             "name": "meta.namespace",
@@ -204,8 +238,12 @@
             "foreground": "var(eppz_using)"
         },
 
-      
-        //functions inside of other classes?
+        {
+            "name": "illegal",
+            "scope": "invalid.illegal",
+            "foreground": "var(test2)"
+        },
+       
         {
             "name": "support.function",
             "scope": "support.function",
@@ -224,6 +262,9 @@
             "foreground": "var(eppz_inherited)"
         },
 
+
+// odin specific
+
         {
             "name": "keyword.control.odin",
             "scope": "keyword.control.odin",
@@ -231,9 +272,127 @@
         },
 
         {
-            "name": "odin.functions",
+            "name": "storage.type.odin",
+            "scope": "storage.type.odin",
+            "foreground": "var(eppz_builtin)"
+        },
+
+        {
+            "name": "keyword.control.import.odin",
+            "scope": "keyword.control.import.odin",
+            "foreground": "var(eppz_using)"
+        },
+
+        {
+            "name": "keyword.operator.declaration.odin",
+            "scope": "keyword.operator.declaration.odin",
+            "foreground": "var(eppz_enclosure)"
+        },
+
+        {
+            "name": "meta.path.odin",
+            "scope": "meta.path.odin",
+            "foreground": "var(eppz_path)",
+        },
+
+        {
+            "name": "keyword.function.odin",
             "scope": "keyword.function.odin",
             "foreground": "var(eppz_func)"
+        },
+
+        {
+            "name": "keyword.tag.odin",
+            "scope": "keyword.tag.odin",
+            "foreground": "var(eppz_using)"
+        },
+
+        {
+            "name": "variable.function.odin",
+            "scope": "variable.function.odin",
+            "foreground": "var(eppz_local)"
+        },
+
+        {
+            "name": "punctuation.definition.string",
+            "scope": "punctuation.definition.string",
+            "foreground": "var(eppz_str)"
+        },
+
+// zig specific
+        
+        
+
+        {
+            "name": "variable.function.zig",
+            "scope": "variable.function.zig",
+            "foreground": "var(eppz_func)"
+        },
+
+        {
+            "name": "support.function.zig",
+            "scope": "support.function.zig",
+            "foreground": "var(eppz_support)"
+        },
+
+        {
+            "name": "storage.type.error.zig",
+            "scope": "storage.type.error.zig",
+            "foreground": "var(eppz_error)"
+        },
+
+        {
+            "name": "entity.name.error.zig",
+            "scope": "entity.name.error.zig",
+            "foreground": "var(eppz_suberr)"
+        },
+
+        {
+            "name": "keyword.control.async.zig",
+            "scope": "keyword.control.async.zig",
+            "foreground": "var(eppz_modifier)"
+        },
+
+        {
+            "name": "keyword.control.zig",
+            "scope": "keyword.control.zig, keyword.control.conditional.zig",
+            "foreground": "var(eppz_keyword)"
+        },
+
+        {
+            "name": "keyword.other.usingnamespace.zig",
+            "scope": "keyword.other.usingnamespace.zig",
+            "foreground": "var(eppz_builtin)"
+        },
+
+        {
+            "name": "keyword.control.usingnamespace.zig",
+            "scope": "keyword.control.import.zig, keyword.control.usingnamespace.zig",
+            "foreground": "var(eppz_using)"
+        },
+
+        {
+            "name": "variable.other.member.zig",
+            "scope": "variable.other.member.zig",
+            "foreground": "var(eppz_var)"
+        },
+
+        {
+            "name": "entity.name.label.zig",
+            "scope": "entity.name.label.zig",
+            "foreground": "var(eppz_var)"
+        },
+
+        {
+            "name": "entity.name.label.zig",
+            "scope": "variable.zig",
+            "foreground": "var(eppz_var)"
+        },
+
+        {
+            "name": "entity.name.label.zig",
+            "scope": "variable.constant.zig",
+            "foreground": "var(test2)"
         },
 
     ]
